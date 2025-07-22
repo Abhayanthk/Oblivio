@@ -24,3 +24,45 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+@tailwind utilities;
+
+@layer utilities {
+  @keyframes background-shine {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  .animate-background-shine {
+    background-size: 200% 100%;
+    animation: background-shine 3s linear infinite;
+  }
+
+  .hover-glow {
+    transition: box-shadow 0.3s ease;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 12px 2px rgba(250, 237, 237, 0.08);
+  }
+}
+@layer utilities {
+      @keyframes background-shine {
+        from {
+          background-position: 0% 0%;
+        }
+        to {
+          background-position: -200% 0%;
+        }
+      }
+    
+      .animate-background-shine {
+        animation: background-shine 5s linear infinite;
+        background-size: 200% 100%;
+      }
+    }
